@@ -81,7 +81,7 @@
             email: this.email,
             password: this.password,
           })
-          .then((user) => {
+          .then(() => {
             this.$router.push({name: 'feedGlobal'})
           })
       },
