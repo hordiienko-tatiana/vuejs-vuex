@@ -50,43 +50,41 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+  import {mapState} from 'vuex'
 
-import McvValidationErrors from '@/components/AppValidationErrors.vue'
-import {actionTypes} from '@/store/modules/auth'
+  import McvValidationErrors from '@/components/AppValidationErrors.vue'
+  import {actionTypes} from '@/store/modules/auth'
 
-export default {
-  name: 'McvAuthRegister',
-  components: {
-    McvValidationErrors,
-  },
-  data() {
-    return {
-      email: '',
-      password: '',
-      username: '',
-    }
-  },
-  computed: {
-    ...mapState({
-      isSubmitting: (state) => state.auth.isSubmitting,
-      validationErrors: (state) => state.auth.validationErrors,
-    }),
-  },
-  methods: {
-    onSubmit() {
-      console.log('submitted form')
-      this.$store
-        .dispatch(actionTypes.register, {
-          username: this.username,
-          email: this.email,
-          password: this.password,
-        })
-        .then((user) => {
-          console.log('successfully register user', user)
-          this.$router.push({name: 'feedGlobal'})
-        })
+  export default {
+    name: 'McvAuthRegister',
+    components: {
+      McvValidationErrors,
     },
-  },
-}
+    data() {
+      return {
+        email: '',
+        password: '',
+        username: '',
+      }
+    },
+    computed: {
+      ...mapState({
+        isSubmitting: (state) => state.auth.isSubmitting,
+        validationErrors: (state) => state.auth.validationErrors,
+      }),
+    },
+    methods: {
+      onSubmit() {
+        this.$store
+          .dispatch(actionTypes.register, {
+            username: this.username,
+            email: this.email,
+            password: this.password,
+          })
+          .then((user) => {
+            this.$router.push({name: 'feedGlobal'})
+          })
+      },
+    },
+  }
 </script>

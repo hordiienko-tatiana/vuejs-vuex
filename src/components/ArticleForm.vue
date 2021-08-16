@@ -94,7 +94,6 @@
           body: this.body,
           tagList: this.tagList,
         }
-        console.log('emitting onSubmit from article form', form)
         this.$emit('articleSubmit', form)
       },
     },

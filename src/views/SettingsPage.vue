@@ -110,13 +110,11 @@
     },
     methods: {
       onSubmit() {
-        console.log('Submitting settings')
         this.$store.dispatch(authActionTypes.updateCurrentUser, {
           currentUserInput: this.form,
         })
       },
       logout() {
-        console.log('Logout')
         this.$store.dispatch(authActionTypes.logout).then(() => {
           this.$router.push({name: 'feedGlobal'})
         })

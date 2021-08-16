@@ -121,7 +121,6 @@ const actions = {
           resolve(user)
         })
         .catch((result) => {
-          console.log('catch register result.response', result.response)
           context.commit(
             mutationTypes.registerFailure,
             result.response.data.errors
@@ -141,7 +140,6 @@ const actions = {
           resolve(user)
         })
         .catch((result) => {
-          console.log('catch login result.response', result.response)
           context.commit(
             mutationTypes.loginFailure,
             result.response.data.errors

@@ -111,7 +111,6 @@
       },
     },
     mounted() {
-      console.log('init feed')
       this.fetchFeed()
     },
     methods: {

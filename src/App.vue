@@ -7,17 +7,16 @@
 </template>
 
 <script>
-import McvTopBar from '@/components/AppTopBar.vue'
-import {actionTypes} from '@/store/modules/auth'
+  import McvTopBar from '@/components/AppTopBar.vue'
+  import {actionTypes} from '@/store/modules/auth'
 
-export default {
-  name: 'McvApp',
-  components: {
-    McvTopBar,
-  },
-  mounted() {
-    console.log('hello app')
-    this.$store.dispatch(actionTypes.getCurrentUser)
-  },
-}
+  export default {
+    name: 'McvApp',
+    components: {
+      McvTopBar,
+    },
+    mounted() {
+      this.$store.dispatch(actionTypes.getCurrentUser)
+    },
+  }
 </script>

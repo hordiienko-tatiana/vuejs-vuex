@@ -45,7 +45,6 @@
       },
     },
     mounted() {
-      console.log('this.$route.params.slug', this.$route.params.slug)
       this.$store.dispatch(actionTypes.getArticle, {
         slug: this.$route.params.slug,
       })
@@ -53,8 +52,6 @@
     methods: {
       onSubmit(articleInput) {
         const slug = this.$route.params.slug
-        console.log('onSubmit from ArticleEdit', articleInput)
-        console.log('slug from ArticleEdit', slug)
         this.$store
           .dispatch(actionTypes.editArticle, {slug, articleInput})
           .then((article) => {

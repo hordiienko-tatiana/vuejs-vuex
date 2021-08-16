@@ -43,7 +43,6 @@
           slug: this.articleSlug,
           isFavourited: this.isFavourited,
         })
-        console.log('handle like')
         if (this.isFavouritedOptimistic) {
           this.favouritesCountOptimistic--
         } else {

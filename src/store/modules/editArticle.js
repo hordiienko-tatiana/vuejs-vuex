@@ -68,7 +68,6 @@ const actions = {
   [actionTypes.getArticle](context, {slug}) {
     return new Promise((resolve) => {
       context.commit(mutationTypes.getArticleStart)
-      console.log('[actionTypes.getArticle](context, {slug})', slug)
       articleApi
         .getArticle(slug)
         .then((article) => {
