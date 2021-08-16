@@ -88,13 +88,13 @@
     },
     methods: {
       onSubmit() {
-        console.log('emitting onSubmit from article form')
         const form = {
           title: this.title,
           description: this.description,
           body: this.body,
           tagList: this.tagList,
         }
+        console.log('emitting onSubmit from article form', form)
         this.$emit('articleSubmit', form)
       },
     },

@@ -66,12 +66,16 @@ const routes = [
   {
     path: '/profiles/:slug',
     name: 'userProfile',
-    component: FeedGlobal,
+    component: () =>
+      import(/* webpackChunkName: "userProfile" */ '@/views/UserProfile.vue'),
   },
   {
-    path: '/profiles/:slug/favourites',
+    path: '/profiles/:slug/favorites',
     name: 'userProfileFavourites',
-    component: FeedGlobal,
+    component: () =>
+      import(
+        /* webpackChunkName: "userProfileFavourites" */ '@/views/UserProfile.vue'
+      ),
   },
 ]
 
