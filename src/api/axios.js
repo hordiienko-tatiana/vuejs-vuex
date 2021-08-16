@@ -10,7 +10,6 @@ axios.interceptors.request.use((config) => {
   const token = getItem('accessToken')
   const authorizationToken = token ? `Token ${token}` : ''
   config.headers.authorization = authorizationToken
-  config.headers['Access-Control-Allow-Origin'] = '*'
   return config
 })
 
